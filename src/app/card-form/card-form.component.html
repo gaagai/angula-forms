@@ -1,0 +1,12 @@
+<form [formGroup]="cardForm">
+  <input formControlName="name" type="text" />
+  <ng-container *ngIf="cardForm.controls.name.errors">
+    <div *ngIf="cardForm.controls.name.errors.required" class="">
+      Value is required!
+    </div>
+  </ng-container>
+</form>
+
+<div>Form Contents: {{ cardForm.value | json }}</div>
+<div>Form Is Valid: {{ cardForm.valid }}</div>
+<div>Errors: {{ cardForm.controls.name.errors | json }}</div>
